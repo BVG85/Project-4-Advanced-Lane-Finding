@@ -20,9 +20,9 @@ The goals / steps of this project are the following:
 
 [image1]: ./camera_cal/calibration1.jpg "Calibration - distorted"
 [image2]: ./output_images/undistorted.jpg "Undistorted"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image3]: ./test_images/test3.jpg
+[image4]: ./output_images/calibrated.jpg "Test Image Calibrated"
+[image5]: ./output_images/pipeline.jpg "Pipeline Result"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 [video2]: ./output.mp4 "Video Output"
@@ -60,14 +60,17 @@ The output `objpoints` and `imgpoints` were used to compute the camera calibrati
 
 #### 1. Provide an example of a distortion-corrected image.
 
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+As a first step, distortion correction was done with the `cal_and_undistort` function. The results can be seen below:
+##### Before Calibration
 ![alt text][image3]
+##### After Calibration
+![alt text][image4]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+A combination of color and gradient thresholds were used to generate a binary image in the `pipeline` function. A secondary function, named `pipeline2` was created for thresholding experiments.  The HLS color space was used with directional thresholding. An example of the pipeline output can be seen below. 
 
-![alt text][image3]
+![alt text][image5]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 

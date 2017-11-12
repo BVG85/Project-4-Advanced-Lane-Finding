@@ -29,6 +29,7 @@ The goals / steps of this project are the following:
 [image9]: ./output_images/swindow.jpg "Sliding Window"
 [image10]: ./output_images/fit.jpg "Fitted drawing"
 [image11]: ./output_images/histo.jpg "Histogram"
+[image12]: ./output_images/warped_result.jpg "Final Result"
 [video1]: ./project_video.mp4 "Video"
 [video2]: ./output.mp4 "Video Output"
 
@@ -119,13 +120,55 @@ Using the sliding window method to identify nonzero pixels and fitting this to a
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+The radius of the curvature was calculated and the converted in x and y from pixel space to meters. It was assumed that the lane is about 30 meters long and 3.7 meters wide. 
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+The following code was used to plot the result on the road with the result below.
 
-![alt text][image6]
+```Python
+# Create an image to draw the lines on
+warp_zero = np.zeros_like(binary_warped).astype(np.uint8)
+color_warp = np.dstack((warp_zero, warp_zero, warp_zero))
+
+# Recast the x and y points into usable format for cv2.fillPoly()
+pts_left = np.array([np.transpose(np.vstack([left_fitx, ploty]))])
+pts_right = np.array([np.flipud(np.transpose(np.vstack([right_fitx, ploty])))])
+pts = np.hstack((pts_left, pts_right))
+
+# Draw the lane onto the warped blank image
+cv2.fillPoly(color_warp, np.int_([pts]), (0,255, 0))
+
+
+# Four source coordinates
+nsrc = np.float32(
+        [[540, 490],
+         [750, 490],
+         [280, 665],
+         [1025, 665]])
+
+offset = 150
+    # Four desired coordinates
+ndst = np.float32(
+        [[offset, 0],
+         [1280-offset, 0],
+         [offset, 720],
+         [1280- offset, 720]])
+
+
+nMinv = cv2.getPerspectiveTransform(ndst, nsrc)
+
+# Warp the blank back to original image space using inverse perspective matrix (Minv)
+                                                    #binary_warped.shape
+newwarp = cv2.warpPerspective(color_warp, nMinv, (img.shape[1], img.shape[0]), flags=cv2.INTER_LINEAR)
+# Combine the result with the original image
+fresult = cv2.addWeighted(cal_cam_image, 1, newwarp, 0.3, 0)
+plt.imshow(fresult)
+
+mpimg.imsave('./output_images/warped_result2.jpg',fresult)
+```
+
+![alt text][image12]
 
 ---
 

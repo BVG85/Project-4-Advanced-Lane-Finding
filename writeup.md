@@ -3,7 +3,7 @@
 ---
 <img src="https://github.com/BVG85/Project-4-Advanced-Lane-Finding/blob/master/output_images/warped_result.jpg">
 
-**Advanced Lane Finding Project**
+## Advanced Lane Finding Project
 
 The goals / steps of this project are the following:
 

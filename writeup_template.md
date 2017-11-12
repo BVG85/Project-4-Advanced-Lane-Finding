@@ -24,7 +24,11 @@ The goals / steps of this project are the following:
 [image4]: ./output_images/calibrated.jpg "Test Image Calibrated"
 [image5]: ./output_images/pipeline.jpg "Pipeline Result"
 [image6]: ./output_images/calibratedPT.jpg "Calibrated Image for Perpective Transform"
-[image7]: ./output_images/warp.jpg
+[image7]: ./output_images/warp.jpg "Perspective Transform"
+[image8]: ./output_images/histo.jpg "Histogram"
+[image9]: ./output_images/swindow.jpg "Sliding Window"
+[image10]: ./output_images/fit.jpg "Fitted drawing"
+[image11]: ./output_images/histo.jpg "Histogram"
 [video1]: ./project_video.mp4 "Video"
 [video2]: ./output.mp4 "Video Output"
 
@@ -104,9 +108,14 @@ The perspective transform was tested and the results can be seen below:
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+A histogram was then plotted by using the binary warped result (from the `warp` function and the `pipeline` functions). 
 
-![alt text][image5]
+![alt text][image8]
+
+Using the sliding window method to identify nonzero pixels and fitting this to a  2nd order polynomial lane lines were plotted:
+
+![alt text][image9]
+![alt text][image10]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 

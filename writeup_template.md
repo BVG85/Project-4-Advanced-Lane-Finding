@@ -176,7 +176,7 @@ mpimg.imsave('./output_images/warped_result2.jpg',fresult)
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./output.mp4)
 
 ---
 
@@ -184,4 +184,5 @@ Here's a [link to my video result](./project_video.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+High contrast lighting conditions remain challenging. The time of day and shadows from other cars can also prove problematic.
+If other vehicles were to merge into the same lane will also prove to be problematic for the pipeline. The images can be processed to be of lower contrast and other color spaces can be explored further to make the pipeline more robust.

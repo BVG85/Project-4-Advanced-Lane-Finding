@@ -1,6 +1,7 @@
 ## Writeup
 
 ---
+<img src="https://github.com/BVG85/Project-4-Advanced-Lane-Finding/blob/master/output_images/warped_result.jpg">
 
 **Advanced Lane Finding Project**
 
@@ -17,7 +18,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
+[image1]: ./output_images/undistorted.jpg "Undistorted"
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"

@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./camera_cal/calibration1.jpg "Calibration - distorted"
 [image2]: ./output_images/undistorted.jpg "Undistorted"
-[image3]: ./test_images/test3.jpg
+[image3]: ./test_images/test2.jpg
 [image4]: ./output_images/calibrated.jpg "Test Image Calibrated"
 [image5]: ./output_images/pipeline.jpg "Pipeline Result"
 [image6]: ./output_images/calibratedPT.jpg "Calibrated Image for Perpective Transform"

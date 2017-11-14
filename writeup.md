@@ -50,7 +50,7 @@ This file is the writeup file for the project.
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step can be found in this notebook [Project 4](https://github.com/BVG85/Project-4-Advanced-Lane-Finding/blob/master/Project%204.ipynb)
+The code for this step can be found in this notebook [P4 Script](https://github.com/BVG85/Project-4-Advanced-Lane-Finding/blob/master/P4%20Script.ipynb)
 
 First "object points" were prepared, which will be the (x, y, z) coordinates of the chessboard corners in the world. It is assumed that the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time all chessboard corners are detected in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
